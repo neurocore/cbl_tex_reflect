@@ -1,0 +1,11 @@
+{
+	"authors": [
+		"CblBOPOTKA"
+	],
+	"copyright": "Copyright © 2024, CblBOPOTKA",
+	"dependencies": {
+	},
+	"description": "A tool to reflect doom textures with fading to transparent using dithering.",
+	"license": "MIT",
+	"name": "cbl_tran_tex_reflect"
+}
