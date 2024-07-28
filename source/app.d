@@ -1,6 +1,6 @@
 import std.stdio;
 import std.file;
-import image, bayer;
+import image, bayer, grad;
 
 void main(string[] args)
 {
@@ -25,17 +25,16 @@ void main(string[] args)
 		if (name == "lumps\\TBLUD0.lmp")
 		{
 			writeln(image);
+
 			image.reverse();
+
+			Grad grad = new GradExp();
+			auto bayer = new Bayer(3);
+			image.dither(grad, bayer);
+
 			writeln(image);
 		}
 
 		writefln("[%d, %d]", image.width, image.height);
-	}
-
-	for (uint i = 1; i <= 4; i++)
-	{
-		writeln("Bayer #", i);
-		auto matrix = new Bayer(i);
-		writeln(matrix);
 	}
 }

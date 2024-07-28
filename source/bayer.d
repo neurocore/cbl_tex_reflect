@@ -35,6 +35,11 @@ final class Bayer
 
   uint size() const { return 1u << n; }
 
+  float opIndex(in size_t x, in size_t y)
+  {
+    return cast(float)arr[x % size][y % size] / size / size;
+  }
+
 private:
   uint n;
   uint[][] arr;

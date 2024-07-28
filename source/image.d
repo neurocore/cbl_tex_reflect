@@ -1,5 +1,6 @@
 module image;
 import std.file;
+import grad, bayer;
 
 enum ImageType { Texture, Sprite }
 
@@ -92,6 +93,21 @@ class Image
       for (size_t x = 0; x < head.w; x++)
       {
         swap(arr[x][y], arr[x][head.h - y - 1]);
+      }
+    }
+  }
+
+  void dither(Grad decay, Bayer bayer)
+  {
+    import std.stdio;
+    for (ushort y = 0; y < head.h; y++)
+    {
+      for (ushort x = 0; x < head.w; x++)
+      {
+        float opacity = decay[y, head.h];
+        float desired = bayer[x, y];
+
+        if (opacity < desired) arr[x][y] = -1;
       }
     }
   }
