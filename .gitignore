@@ -15,4 +15,5 @@ cbl_tran_tex_reflect-test-*
 *.obj
 *.lst
 /lumps
+/output
 mixins.txt

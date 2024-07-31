@@ -18,5 +18,5 @@ rem ldc2 %files% -d-debug -of=%exe_name%_debug.exe
 if %ERRORLEVEL% NEQ 1 (
     echo done
     echo.
-    %exe_name%_debug.exe lumps
+    %exe_name%_debug.exe lumps/sprites lumps/textures
 )
