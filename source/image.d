@@ -124,7 +124,7 @@ class Image
     if (file.exists) remove(file);
 
     append(file, [head.w, head.h]);
-    append(file, [head.left, head.top]);
+    append(file, [head.top, head.left]); // idk why, but it's working
 
     // building columns and posts
 
